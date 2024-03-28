@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+
+
 @Entity
 @Data
 public class Prof {
@@ -12,12 +14,13 @@ public class Prof {
     @Id
     @GeneratedValue
     private int id;
-    private String genre;
+    private char genre;
     private String nom;
     private String prenom;
     private String email;
     private int classePrimaire;
     private String motDePasse;
+
 
 
 }
