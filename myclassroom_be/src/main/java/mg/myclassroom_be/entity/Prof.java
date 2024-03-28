@@ -22,5 +22,8 @@ public class Prof {
     private String motDePasse;
 
 
+    public String getNomCompletProf() {
+        return this.nom + " " + this.prenom;
+    }
 
 }
