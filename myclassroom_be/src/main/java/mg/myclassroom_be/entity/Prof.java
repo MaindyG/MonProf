@@ -13,7 +13,7 @@ public class Prof {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int prof_id;
     private char genre;
     private String nom;
     private String prenom;
@@ -22,8 +22,6 @@ public class Prof {
     private String motDePasse;
 
 
-    public String getNomCompletProf() {
-        return this.nom + " " + this.prenom;
-    }
+
 
 }

@@ -1,6 +1,7 @@
 package mg.myclassroom_be.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import lombok.Data;
 @Data
 public class Bulletin {
     @Id
+    @GeneratedValue
     private int id_bulletin;
     private double moyenneFrancais;
     private double moyenneMath;

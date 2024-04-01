@@ -2,7 +2,6 @@ package mg.myclassroom_be.controller;
 
 import mg.myclassroom_be.entity.Bulletin;
 import mg.myclassroom_be.entity.Eleve;
-import mg.myclassroom_be.entity.Prof;
 import mg.myclassroom_be.exceptions.EleveNotFoundException;
 import mg.myclassroom_be.repository.BulletinRepo;
 import mg.myclassroom_be.repository.EleveRepo;
@@ -16,14 +15,12 @@ public class EleveController {
 
     @Autowired
     private EleveRepo eleveRepo;
+    @Autowired
     private BulletinRepo bulletinRepo;
 
     //Add
-    @PostMapping("/eleve")
+    @PostMapping("/neweleve")
     Eleve newEleve(@RequestBody Eleve newEleve) {
-        Bulletin bulletin = new Bulletin();
-        bulletinRepo.save(bulletin);
-        newEleve.setBulletin(bulletin);
         return eleveRepo.save(newEleve);
     }
 
@@ -59,7 +56,7 @@ public class EleveController {
 
 
     //Modifier bulletin
-    @PutMapping("/eleves/{student_id}/bulletin")
+    @PutMapping("/noteseleve/{student_id}/{bulletin_id}")
     public Eleve updateBulletinEleve(@PathVariable int student_id, @RequestBody Bulletin newBulletin) {
         Eleve eleve = eleveRepo.findById(student_id)
                 .orElseThrow(() -> new EleveNotFoundException(student_id));
