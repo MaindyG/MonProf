@@ -16,23 +16,26 @@ export default function Meseleves() {
     setEleves(result.data);
   };
 
-  const deleteEleves = async (id) => {
+  const deleteEleves = async (student_id) => {
     await axios.delete(`http://localhost:8181/eleve/${student_id}`);
     loadEleves();
   };
 
   return (
-    <div className="container">
-      <div className="py-4">
-        <table className="table border shadow">
+    <div className='vh-100 container-fluid d-flex flex-column justify-content-center align-items-center bg-dark text-light' >
+
+    <div className="container ">
+      <div className="py-4 ">
+        <h1 className="mb-5 "><u>Liste d'élèves</u> </h1>
+        <table className="table ">
           <thead>
-            <tr>
+            <tr className="">
               <th scope="col">Code ID #</th>
               <th scope="col">Genre 👋🏾 </th>
               <th scope="col">Nom 👨🏾‍💻</th>
               <th scope="col">Prenom 👩🏾‍🔬</th>
               <th scope="col">Figure Parentale 👪</th>
-              <th scope="col">Numero de telephone Figure Parentale ☎️</th>
+              <th scope="col">Tel Figure Parentale ☎️</th>
               <th scope="col">Action ✍🏾</th>
             </tr>
           </thead>
@@ -51,12 +54,6 @@ export default function Meseleves() {
 
                 <td>
                   <Link
-                    className="btn btn-primary mx-2"
-                    to={`/vieweleve/${eleves.student_id}`}
-                  >
-                    View
-                  </Link>
-                  <Link
                     className="btn btn-outline-primary mx-2"
                     to={`/editeleve/${eleves.student_id}`}
                   >
@@ -73,7 +70,9 @@ export default function Meseleves() {
             ))}
           </tbody>
         </table>
+        <Link className="btn btn-outline-primary mx-2" to="/neweleve"> Ajouter un nouvel élève</Link>
       </div>
-    </div>
+      </div>
+      </div>
   );
 }

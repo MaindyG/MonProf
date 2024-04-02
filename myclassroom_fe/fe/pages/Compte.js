@@ -6,9 +6,7 @@ export default function Compte() {
     let navigate = useNavigate();
 
     const { prof_id } = useParams();
-   
-
-  
+ 
     const [prof, setProf] = useState({
       genre:"",
       nom: "",
@@ -25,28 +23,26 @@ export default function Compte() {
     
     useEffect(() => {
       loadProf();
-    });
-  
+    },[]);
   
     const onSubmit = async (e) => {
       e.preventDefault();
-      await axios.put(`http://localhost:8181/prof/${prof_id}`, prof);
+      await axios.put(`http://localhost:8181/prof/1`, prof);
       navigate("/");
     };
 
     const loadProf = async () => {
       const result = await axios.get('http://localhost:8181/lesprofs');
+      
         setProf(result.data[0]);      
     };
   
-    
-  
     return (
-      <div className="bg-dark text-light">
+      <div className='vh-100 container-fluid d-flex flex-column justify-content-center align-items-center bg-dark text-light' >
       <div className="container p-4 ">
         <div className="row">
           <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-            <h2 className="text-center m-4">Modifier vos informations</h2>
+            <h2 className="text-center m-4"><u>Modifier vos informations</u></h2>
   
             <form onSubmit={(e) => onSubmit(e)}>
 
@@ -73,7 +69,7 @@ export default function Compte() {
                   type={"text"}
                   className="form-control"
                   placeholder="Entrez votre nom"
-                  name="name"
+                  name="nom"
                   value={nom}
                   onChange={(e) => onInputChange(e)}
                 />
@@ -121,7 +117,7 @@ export default function Compte() {
               </div>
 
               <button type="submit" className="btn btn-outline-primary mt-4">
-                Soummettre vos modifications
+                Soumettre vos modifications
               </button>
               <Link className="btn btn-outline-danger mx-2 mt-4" to="/">
                 Annuler vos modifications

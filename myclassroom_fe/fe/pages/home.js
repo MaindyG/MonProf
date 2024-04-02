@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function home() {
   return (
@@ -12,7 +13,7 @@ export default function home() {
       <div class="card-body">
         <h5 class="card-title">Liste d'élèves</h5><br></br>
         <p class="card-text">Ajouter ou Supprimer vos élèves. <br></br>Vous pourrez aussi modifier les informations de vos élèves    </p>
-        <br></br><a href="#" class="btn btn-primary">Mes élèves</a>
+        <br></br><Link class="btn btn-primary" to="/meseleves">Mes élèves</Link>
       </div>
     </div>
   </div>
@@ -22,7 +23,7 @@ export default function home() {
         <h5 class="card-title">Notes</h5><br></br>
         <p class="card-text">Entrez les notes de vos élèves et suivez la progression de leur parcours scolaire <br></br> </p>
         <br></br>
-        <a href="#" class="btn btn-primary">Bulletins</a>
+        <Link class="btn btn-primary" to="/">Bulletins</Link>
       </div>
     </div>
   </div>
