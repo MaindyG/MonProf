@@ -14,13 +14,13 @@ export default function navbar() {
           📖 MyClassRoom
           </Link>
         <div className="btn-group"  >
-            <Link to="/mes-eleves" className="btn btn-outline-light mr-2">
+            <Link to="/meseleves" className="btn btn-outline-light mr-2">
             Mes élèves
             </Link>
             <Link to="/bulletins" className="btn btn-outline-light mr-2">
             Bulletins
             </Link>
-            <Link to="/mon-compte" className="btn btn-outline-light">
+            <Link to="/prof/1" className="btn btn-outline-light">
             Mon Compte
             </Link>
         </div>
