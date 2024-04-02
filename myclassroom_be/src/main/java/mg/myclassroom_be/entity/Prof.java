@@ -12,8 +12,7 @@ import lombok.Data;
 public class Prof {
 
     @Id
-    @GeneratedValue
-    private int prof_id;
+    private int prof_id = 1;
     private char genre;
     private String nom;
     private String prenom;

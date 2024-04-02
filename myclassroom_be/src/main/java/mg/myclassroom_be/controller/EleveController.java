@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 public class EleveController {
 
     @Autowired
@@ -40,7 +41,7 @@ public class EleveController {
             eleve.setPrenom(newEleve.getPrenom());
             eleve.setNom_figure_parentale((newEleve.getNom_figure_parentale()));
             eleve.setNum_tel_parentale(newEleve.getNum_tel_parentale());
-            return eleveRepo.save(eleve); // Save and return the updated Eleve object
+            return eleveRepo.save(eleve);
         }).orElseThrow(() -> new EleveNotFoundException(student_id));
     }
 
