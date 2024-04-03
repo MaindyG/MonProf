@@ -9,18 +9,18 @@ export default function home() {
     <h2 className='text-light'>=========== O ===========</h2>
     <div class="row mt-4">
   <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Liste d'élèves</h5><br></br>
+    <div class="card  text-dark">
+      <div class="card-body ">
+        <h5 class="card-title"><u><b>Liste d'élèves</b></u></h5><br></br>
         <p class="card-text">Ajouter ou Supprimer vos élèves. <br></br>Vous pourrez aussi modifier les informations de vos élèves    </p>
         <br></br><Link class="btn btn-primary" to="/meseleves">Mes élèves</Link>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
-    <div class="card">
+    <div class="card text-dark">
       <div class="card-body">
-        <h5 class="card-title">Notes</h5><br></br>
+        <h5 class="card-title"><u><b>Notes</b></u></h5><br></br>
         <p class="card-text">Entrez les notes de vos élèves et suivez la progression de leur parcours scolaire <br></br> </p>
         <br></br>
         <Link class="btn btn-primary" to="/">Bulletins</Link>

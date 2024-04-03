@@ -22,13 +22,13 @@ export default function Meseleves() {
   };
 
   return (
-    <div className='vh-100 container-fluid d-flex flex-column justify-content-center align-items-center bg-dark text-light' >
+    <div className='vh-100 container-fluid d-flex flex-column ' >
 
     <div className="container ">
       <div className="py-4 ">
         <h1 className="mb-5 "><u>Liste d'élèves</u> </h1>
-        <table className="table ">
-          <thead>
+        <table className="table border ">
+          <thead class="thead-dark">
             <tr className="">
               <th scope="col">Code ID #</th>
               <th scope="col">Genre 👋🏾 </th>
@@ -55,15 +55,15 @@ export default function Meseleves() {
                 <td>
                   <Link
                     className="btn btn-outline-primary mx-2"
-                    to={`/editeleve/${eleves.student_id}`}
+                    to={`/eleve/${student_id}`}
                   >
-                    Edit
+                    Modifier
                   </Link>
                   <button
                     className="btn btn-danger mx-2"
                     onClick={() => deleteEleves(eleves.student_id)}
                   >
-                    Delete
+                    Supprimer 
                   </button>
                 </td>
               </tr>

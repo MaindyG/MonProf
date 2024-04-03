@@ -18,7 +18,7 @@ export default function AjoutEleve() {
     const onSubmit= async (e)=>{
         e.preventDefault();
         await axios.post("http://localhost:8181/neweleve",eleves)
-        navigate("/") 
+        navigate("/meseleves") 
     };
 
 

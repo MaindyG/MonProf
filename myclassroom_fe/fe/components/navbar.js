@@ -8,7 +8,7 @@ export default function navbar() {
     //npm i bootstrap
     //npm i react-router-dom
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg border-secondary" > 
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
           📖 MyClassRoom

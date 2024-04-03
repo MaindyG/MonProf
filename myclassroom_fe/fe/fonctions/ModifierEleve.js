@@ -2,47 +2,46 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
-export default function Compte() {
+export default function ModifierEleve() {
     let navigate = useNavigate();
 
-    const { prof_id } = useParams();
+    const { id } = useParams();
  
-    const [prof, setProf] = useState({
+    const [eleves, setEleves] = useState({
       genre:"",
       nom: "",
       prenom: "",
-      email: "",
-      classePrimaire:""
+      nom_figure_parentale: "",
+      num_tel_parentale:""
     });
   
-    const { genre, nom, prenom, email, classePrimaire } = prof;
+    const { genre, nom, prenom, nom_figure_parentale, num_tel_parentale } = eleves;
   
     const onInputChange = (e) => {
-      setProf({ ...prof, [e.target.name]: e.target.value });
+      setEleves({ ...eleves, [e.target.name]: e.target.value });
     };
     
     useEffect(() => {
-      loadProf();
+        loadEleves();
     },[]);
   
     const onSubmit = async (e) => {
       e.preventDefault();
-      await axios.put(`http://localhost:8181/prof/1`, prof);
-      navigate("/");
+      await axios.put(`http://localhost:8181/eleve/${id}`, eleves);
+      navigate("/meseleves");
     };
 
-    const loadProf = async () => {
-      const result = await axios.get('http://localhost:8181/lesprofs');
-      
-        setProf(result.data[0]);      
+    const loadEleves = async () => {
+      const result = await axios.get(`http://localhost:8181/eleve/${id}`);
+      setEleves(result.data);      
     };
   
     return (
-      <div className=''>
+     
       <div className="vh-100  p-4 ">
         <div className="row">
           <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 ">
-            <h2 className="text-center m-4"><u>Modifier vos informations</u></h2>
+            <h2 className="text-center m-4"><u>Modifier les informations</u></h2>
   
             <form onSubmit={(e) => onSubmit(e)}>
 
@@ -54,7 +53,7 @@ export default function Compte() {
                 <input
                   type={"text"}
                   className="form-control"
-                  placeholder="Entrez votre genre (H ou F)"
+                  placeholder="Entrez le genre (H ou F)"
                   name="genre"
                   value={genre}
                   onChange={(e) => onInputChange(e)}
@@ -68,7 +67,7 @@ export default function Compte() {
                 <input
                   type={"text"}
                   className="form-control"
-                  placeholder="Entrez votre nom"
+                  placeholder="Entrez le nom"
                   name="nom"
                   value={nom}
                   onChange={(e) => onInputChange(e)}
@@ -82,36 +81,36 @@ export default function Compte() {
                 <input
                   type={"text"}
                   className="form-control"
-                  placeholder="Entrez votre prénom"
+                  placeholder="Entrez le prénom"
                   name="prenom"
                   value={prenom}
                   onChange={(e) => onInputChange(e)}
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="Email" className="form-label">
-                  E-mail
+                <label htmlFor="nom_figure_parentale" className="form-label">
+                  Parent
                 </label>
                 <input
                   type={"text"}
                   className="form-control"
                   placeholder="Entrez votre addesse e-mail"
-                  name="email"
-                  value={email}
+                  name="nom_figure_parentale"
+                  value={nom_figure_parentale}
                   onChange={(e) => onInputChange(e)}
                 />
               </div>
 
               <div className="mb-3">
                 <label htmlFor="Classe_Primaire" className="form-label">
-                  Niveau/Classe Primaire
+                 Tel. Parent
                 </label>
                 <input
-                  type={"text"}
+                  type={Number}
                   className="form-control"
                   placeholder="Entrez votre classe primaire"
-                  name="classePrimaire"
-                  value={classePrimaire}
+                  name="num_tel_parentale"
+                  value={num_tel_parentale}
                   onChange={(e) => onInputChange(e)}
                 />
               </div>
@@ -119,13 +118,12 @@ export default function Compte() {
               <button type="submit" className="btn btn-outline-primary mt-4">
                 Soumettre vos modifications
               </button>
-              <Link className="btn btn-outline-danger mx-2 mt-4" to="/">
+              <Link className="btn btn-outline-danger mx-2 mt-4" to="/meseleves">
                 Annuler vos modifications
               </Link>
             </form>
           </div>
         </div>
-      </div>
       </div>
     );
   }

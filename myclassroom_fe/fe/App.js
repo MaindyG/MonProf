@@ -7,6 +7,7 @@ import Home from './pages/home.js'
 import Compte from './pages/Compte.js';
 import Meseleves from './pages/Meseleves.js';
 import AjoutEleve from './fonctions/AjoutEleve.js';
+import ModifierEleve from './fonctions/ModifierEleve.js';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <Route exact path="/prof/1" element={<Compte />} />
             <Route exact path="/meseleves" element={<Meseleves />} />
             <Route exact path="/neweleve" element={<AjoutEleve/>}/>
-
+            <Route exact path="/eleve/:id" element={<ModifierEleve />} />
         </Routes>
         <Footer />
      </Router>    
