@@ -17,7 +17,7 @@ export default function navbar() {
             <Link to="/meseleves" className="btn btn-outline-light mr-2">
             Mes élèves
             </Link>
-            <Link to="/bulletins" className="btn btn-outline-light mr-2">
+            <Link to="/bulletin" className="btn btn-outline-light mr-2">
             Bulletins
             </Link>
             <Link to="/prof/1" className="btn btn-outline-light">

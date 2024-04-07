@@ -23,7 +23,7 @@ export default function home() {
         <h5 class="card-title"><u><b>Notes</b></u></h5><br></br>
         <p class="card-text">Entrez les notes de vos élèves et suivez la progression de leur parcours scolaire <br></br> </p>
         <br></br>
-        <Link class="btn btn-primary" to="/">Bulletins</Link>
+        <Link class="btn btn-primary" to="/bulletin">Bulletins</Link>
       </div>
     </div>
   </div>

@@ -55,7 +55,7 @@ export default function Meseleves() {
                 <td>
                   <Link
                     className="btn btn-outline-primary mx-2"
-                    to={`/eleve/${student_id}`}
+                    to={`/eleve/${eleves.student_id}`}
                   >
                     Modifier
                   </Link>

@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 export default function ModifierEleve() {
     let navigate = useNavigate();
 
-    const { id } = useParams();
+    const { student_id } = useParams();
  
     const [eleves, setEleves] = useState({
       genre:"",
@@ -23,16 +23,16 @@ export default function ModifierEleve() {
     
     useEffect(() => {
         loadEleves();
-    },[]);
+    },[student_id]);
   
     const onSubmit = async (e) => {
       e.preventDefault();
-      await axios.put(`http://localhost:8181/eleve/${id}`, eleves);
+      await axios.put(`http://localhost:8181/eleve/${student_id}`, eleves);
       navigate("/meseleves");
     };
 
     const loadEleves = async () => {
-      const result = await axios.get(`http://localhost:8181/eleve/${id}`);
+      const result = await axios.get(`http://localhost:8181/eleve/${student_id}`);
       setEleves(result.data);      
     };
   
