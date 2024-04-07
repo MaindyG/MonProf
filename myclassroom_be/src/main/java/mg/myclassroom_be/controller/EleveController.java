@@ -45,9 +45,9 @@ public class EleveController {
         }).orElseThrow(() -> new EleveNotFoundException(student_id));
     }
 
-    //Lire infos eleve
-    @GetMapping("/eleve/{id}")
-    Eleve getUserById(@PathVariable int student_id) {
+    //Avoir infos eleve
+    @GetMapping("/eleve/{student_id}")
+    Eleve getEleveById(@PathVariable int student_id) {
         return eleveRepo.findById(student_id)
                 .orElseThrow(() -> new EleveNotFoundException(student_id));
     }
