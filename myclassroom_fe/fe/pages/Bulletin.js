@@ -17,10 +17,6 @@ export default function Bulletins() {
     setEleves(result.data);
   };
 
-  const deleteEleves = async (student_id) => {
-    await axios.put(`http://localhost:8181/noteseleve/${student_id}/${bulletin_id}`);
-    loadEleves();
-  };
 
   return (
     <div className='vh-100 container-fluid d-flex flex-column ' >
@@ -34,11 +30,11 @@ export default function Bulletins() {
               <th scope="col">Code ID #</th>
               <th scope="col">Nom 👨🏾‍💻</th>
               <th scope="col">Prenom 👩🏾‍🔬</th>
-              <th scope="col">Francais 👩🏾‍🔬</th>
-              <th scope="col">Math 👩🏾‍🔬</th>
-              <th scope="col">Histoire 👩🏾‍🔬</th>
-              <th scope="col">EP 👩🏾‍🔬</th>
-              <th scope="col">Commentaire 👩🏾‍🔬</th>
+              <th scope="col">Francais 🥖</th>
+              <th scope="col">Math 👾</th>
+              <th scope="col">Histoire 📜</th>
+              <th scope="col">EducPhysique ⚽</th>
+              <th scope="col">Commentaire 🍏</th>
               <th scope="col">Action ✍🏾</th>
             </tr>
           </thead>
@@ -58,17 +54,11 @@ export default function Bulletins() {
 
                 <td>
                   <Link
-                    className="btn btn-outline-primary mx-2"
-                    to={`/eleve/${eleves.student_id}`}
+                    className="btn btn-outline-dark mx-2"
+                    to={`/eleve/${eleves.student_id}/${eleves.student_id}`}
                   >
                     Modifier
                   </Link>
-                  <button
-                    className="btn btn-danger mx-2"
-                    onClick={() => deleteEleves(eleves.student_id)}
-                  >
-                    Sauvegarder 
-                  </button>
                 </td>
               </tr>
             ))}
