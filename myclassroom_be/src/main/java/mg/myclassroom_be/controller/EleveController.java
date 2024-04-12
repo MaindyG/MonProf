@@ -58,12 +58,13 @@ public class EleveController {
             throw new EleveNotFoundException(student_id);
         }
         eleveRepo.deleteById(student_id);
+        bulletinRepo.deleteById(student_id);
         return "Eleve avec id "+student_id +" a été supprimé";
     }
 
 
     //Modifier bulletin
-    @PutMapping("/noteseleve/{student_id}/{bulletin_id}")
+    @PutMapping("/eleve/{student_id}/{bulletin_id}")
     public Eleve updateBulletinEleve(@PathVariable int student_id, @RequestBody Bulletin newBulletin) {
         Eleve eleve = eleveRepo.findById(student_id)
                 .orElseThrow(() -> new EleveNotFoundException(student_id));
@@ -77,6 +78,12 @@ public class EleveController {
 
         eleve.setBulletin(bulletin);
         return eleveRepo.save(eleve);
+    }
+
+    @GetMapping("/noteeleve/{bulletin_id}")
+    Bulletin getBulletinById(@PathVariable int bulletin_id) {
+        return bulletinRepo.findById(bulletin_id)
+                .orElseThrow(() -> new EleveNotFoundException(bulletin_id));
     }
 }
 
