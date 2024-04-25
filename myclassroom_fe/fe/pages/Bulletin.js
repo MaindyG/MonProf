@@ -28,11 +28,9 @@ export default function Bulletins() {
           <thead class="thead-dark">
             <tr className="">
               <th scope="col">Code ID #</th>
-              <th scope="col">Nom 👨🏾‍💻</th>
-              <th scope="col">Prenom 👩🏾‍🔬</th>
+              <th scope="col">Nom Complet 👨🏾‍💻</th>
               <th scope="col">Francais 🥖</th>
               <th scope="col">Math 👾</th>
-              <th scope="col">Histoire 📜</th>
               <th scope="col">EducPhysique ⚽</th>
               <th scope="col">Commentaire 🍏</th>
               <th scope="col">Action ✍🏾</th>
@@ -44,11 +42,9 @@ export default function Bulletins() {
                 <th scope="row" key={index}>
                   {eleves.student_id}
                 </th>
-                <td>{eleves.nom}</td>
-                <td>{eleves.prenom}</td>
+                <td>{eleves.nom} {eleves.prenom} </td>
                 <td>{eleves.bulletin.moyenneFrancais}</td>
                 <td>{eleves.bulletin.moyenneMath}</td>
-                <td>{eleves.bulletin.moyenneHistoire}</td>
                 <td>{eleves.bulletin.moyenneEP}</td>
                 <td>{eleves.bulletin.commentaire}</td>
 

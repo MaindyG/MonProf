@@ -32,7 +32,7 @@ export default function AjoutEleve() {
                 <form onSubmit={(e)=>onSubmit(e)}>
                 <div className='mb-3'>
                     <label htmlFor='Name' className='form-label'>
-                        Genre
+                        Genre <span className='text-danger'>*</span>
                     </label>
                     <input
                     type={"text"}
@@ -41,12 +41,13 @@ export default function AjoutEleve() {
                     name='genre'
                     value= {genre}
                     onChange={(e)=>onInputChange(e)}
+                    required
                     />
                 </div>
 
                 <div className='mb-3'>
                     <label htmlFor='Nom' className='form-label'>
-                        Nom
+                        Nom <span className='text-danger'>*</span>
                     </label>
                     <input
                     type={"text"}
@@ -55,13 +56,14 @@ export default function AjoutEleve() {
                     name='nom'
                     value= {nom}
                     onChange={(e)=>onInputChange(e)}
+                    required
                     />
                 </div>
 
 
                 <div className='mb-3'>
                     <label htmlFor='Prenom' className='form-label'>
-                        Prenom
+                        Prenom <span className='text-danger'>*</span>
                     </label>
                     <input
                     type={"text"}
@@ -70,12 +72,13 @@ export default function AjoutEleve() {
                     name='prenom'
                     value= {prenom}
                     onChange={(e)=>onInputChange(e)}
+                    required
                     />
                 </div>
 
                 <div className='mb-3'>
                     <label htmlFor='Nom_figure_parentale' className='form-label'>
-                        Nom_figure_parentale
+                        Nom_figure_parentale <span className='text-danger'>*</span>
                     </label>
                     <input
                     type={"text"}
@@ -84,23 +87,28 @@ export default function AjoutEleve() {
                     name='nom_figure_parentale'
                     value= {nom_figure_parentale}
                     onChange={(e)=>onInputChange(e)}
+                    required
                     />
+                    
                 </div>
 
                 <div className='mb-3'>
                     <label htmlFor='Num_figure_parentale' className='form-label'>
-                        Nume Tel de figure parentale 
+                        Num Tel de figure parentale <span className='text-danger'>*</span>
                     </label>
                     <input
-                    type={"text"}
+                    type={"number"}
                     className='form-control'
                     placeholder='Entrez le/les numero de telephone du père ou de la mère'
                     name='num_tel_parentale'
+                    min="1" max="999999999"
+                    maxLength={10}
                     value= {num_tel_parentale}
                     onChange={(e)=>onInputChange(e)}
+                    required
                     />
                 </div>
-
+                <br></br>
                 <button type="submit" className='btn btn-outline-primary'>Enregistrer</button>
                 <Link className='btn btn-outline-danger mx-2' to="/meseleves">Annuler</Link>
                 </form>

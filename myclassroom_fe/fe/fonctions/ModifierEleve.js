@@ -38,7 +38,7 @@ export default function ModifierEleve() {
   
     return (
      
-      <div className="vh-100  p-4 ">
+      <div className="  p-4 ">
         <div className="row">
           <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 ">
             <h2 className="text-center m-4"><u>Modifier les informations</u></h2>

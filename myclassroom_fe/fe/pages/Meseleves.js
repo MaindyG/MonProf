@@ -27,7 +27,7 @@ export default function Meseleves() {
     <div className="container ">
       <div className="py-4 ">
         <h1 className="mb-5 "><u>Liste d'élèves</u> </h1>
-        <table className="table border ">
+        <table className="table border table-responsive ">
           <thead class="thead-dark">
             <tr className="">
               <th scope="col">Code ID #</th>

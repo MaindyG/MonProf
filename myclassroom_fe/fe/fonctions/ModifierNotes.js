@@ -12,12 +12,11 @@ export default function ModifierNotes() {
       bulletin : {
         moyenneFrancais:"",
         moyenneMath: "",
-        moyenneHistoire: "",
         moyenneEP: "",
         commentaire:""
 }});
   
-    const { moyenneFrancais, moyenneMath, moyenneHistoire, moyenneEP, commentaire } = eleves;
+    const { moyenneFrancais, moyenneMath,  moyenneEP, commentaire } = eleves;
   
     const onInputChange = (e) => {
       setEleves({ ...eleves, [e.target.name]: e.target.value });
@@ -77,19 +76,7 @@ export default function ModifierNotes() {
                 />
               </div>
 
-              <div className="mb-3">
-                <label htmlFor="moyennneHistoire" className="form-label">
-                  Histoire
-                </label>
-                <input
-                  type={"text"}
-                  className="form-control"
-                  placeholder=""
-                  name="moyennneHistoire"
-                  value={moyenneHistoire}
-                  onChange={(e) => onInputChange(e)}
-                />
-              </div>
+             
               <div className="mb-3">
                 <label htmlFor="moyenneEP" className="form-label">
                   Education Physique
