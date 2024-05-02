@@ -18,5 +18,6 @@ function App() {
 //npm install --save @fortawesome/fontawesome-free
 //npm i axios
 //npm install cors
+//npm install react-icons --save
 
 export default App;
