@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { PORT } from './Constantes.js';
+
 export default function Bulletins() {
 
   const [eleves, setEleves] = useState([]);
@@ -13,7 +15,7 @@ export default function Bulletins() {
   },[]);
 
   const loadEleves = async () => {
-    const result = await axios.get("http://localhost:8181/meseleves");
+    const result = await axios.get(`http://localhost:${PORT}/meseleves`);
     setEleves(result.data);
   };
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { PORT } from './Constantes.js';
 
 export default function Compte() {
     let navigate = useNavigate();
@@ -27,7 +28,7 @@ export default function Compte() {
   
     const onSubmit = async (e) => {
       e.preventDefault();
-      await axios.put(`http://localhost:8181/prof/1`, prof);
+      await axios.put(`http://localhost:${PORT}/prof/1`, prof);
       navigate("/");
     };
 
